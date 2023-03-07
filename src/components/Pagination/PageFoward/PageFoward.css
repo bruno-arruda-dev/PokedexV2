@@ -2,6 +2,6 @@
     transform: rotateX(90deg);
     width: 70px;
     height: 50px;
-    background-image: url('./../../../../../public/images/back.png');
+    background-image: url('./../../../../public/images/back.png');
     background-size: cover;
 }

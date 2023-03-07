@@ -23,11 +23,21 @@
     border-radius: var(--main-radius);
     height: 70%;
     width: 100%;
-    box-shadow: 0 0 3px 1px rgb(121, 121, 121);
+    box-shadow: 1px 1px 3px 1px var(--main-text-color);
 }
 
 .pokemon-title {
     text-transform: capitalize;
+    color: var(--main-text-color);
+}
+
+.pokemon-id {
+    color: var(--opacity-text-color);
+    position: absolute;
+    font-size: 2rem;
+    top: 35%;
+    left: 22%;
+    font-family: 'Climate Crisis', cursive;
 }
 
 .pokemonCard-img {

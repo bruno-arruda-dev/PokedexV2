@@ -19,16 +19,17 @@ function PokemonCard( { pokemon } ) {
             setSecImg(currentPokemon.sprites?.front_default);
             setMainType(currentPokemon.types[0]?.type.name);
             setSecType(currentPokemon.types[1]?.type.name);
-            setImmediate(currentPokemon.id);
+            setId(currentPokemon.id);
         };
         fetchPokemon();
     }, [pokemon]);
 
   return (
     <div className='pokemonCard' id={pokemon}>
-            <img className='pokemonCard-img' src={mainImg ? mainImg : secImg} alt={pokemon}/>
+        <img className='pokemonCard-img' src={mainImg ? mainImg : secImg} alt={pokemon}/>
         <div className={`pokemonCard-container bg-${mainType}`}>
             <h3 className='pokemon-title'>{pokemon}</h3>
+            <p className='pokemon-id'>#{id}</p>
             <div className='pokemonCard-types'>
                 <div className={`type st ${mainType}`} st>{mainType}</div>
                 { secType && <div className={`type nd ${secType}`}>{secType}</div> }
