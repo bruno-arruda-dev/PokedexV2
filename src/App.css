@@ -1,0 +1,11 @@
+:root {
+  --main-detail-color: rgb(110, 0, 0);
+  --main-radius: 10px;
+  --main-text-color: rgb(49, 49, 49);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

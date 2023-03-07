@@ -1,0 +1,55 @@
+.searchbar {
+    display: flex;
+}
+
+.searchbar-input,
+.searchbar-button {
+    border: none;
+    height: 30px;
+    background-color: white;
+}
+
+.searchbar-input {
+    padding-left: 7px;
+    border-radius:  var(--main-radius)
+                    0
+                    0
+                    var(--main-radius);
+}
+
+.searchbar-button {
+    padding: 1%;
+    border: none;
+    width: 30px;
+    background-image: url('../../../../public/images/search.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    border-radius:  0 
+                    var(--main-radius)
+                    var(--main-radius)
+                    0;
+}
+
+.searchbar:focus-within .searchbar-input {
+    outline: none;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  
+  .searchbar:focus-within .searchbar-button {
+    outline: none;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+
+  .searchbar-button:focus {
+    animation: toutch .2s ease-in-out;
+  }
+
+  @keyframes toutch {
+    0% { background-size: 40% }
+    100% {background-size: 80%;}
+  }
