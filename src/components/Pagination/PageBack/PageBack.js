@@ -1,9 +1,9 @@
 import React from 'react';
-import './PageBack.css';
+import '../Arrow.css';
 
 function PageBack() {
   return (
-    <div className='pageback'></div>
+    <div className='pageback arrow'></div>
   )
 }
 
