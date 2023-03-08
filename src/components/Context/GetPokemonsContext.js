@@ -5,19 +5,19 @@ import { PaginationContext } from './PaginationContext';
 export const GetPokemonsContext = createContext();
 
 export const GetPokemonsProvider = ({ children }) => {
-  const {offset, pokemonsPerPage} = useContext(PaginationContext);
+  const {limit, offset} = useContext(PaginationContext);
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
     async function fetchPokemons() {
-      const pokemonsData = await getPokemons(pokemonsPerPage, offset);
+      const pokemonsData = await getPokemons(limit, offset);
       setPokemons(pokemonsData.results);
       console.log(
-        `Busca de pokemons concluída: ${pokemonsPerPage} por página e deslocamento iniciando em ${offset}`
+        `Busca de pokemons concluída: ${limit} por página e deslocamento iniciando em ${offset}`
       );
     }
     fetchPokemons();
-  }, [offset, pokemonsPerPage]);
+  }, [offset, limit]);
 
   return (
     <GetPokemonsContext.Provider value={{ pokemons }}>
