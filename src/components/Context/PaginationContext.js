@@ -9,21 +9,27 @@ export const PaginationProvider = ({ children }) => {
     const maxPokemons = 1281; //Máximo de pokemons na API
     const maxPages = Math.ceil(maxPokemons / pokemonsPerPage); //Máximo de páginas
 
-    const handlePageBack = () => {
-        if (currentPage < maxPages) {
+    const GoBack = () => {
+        if (currentPage == 1) { //Se estiver na primeira página, avança para a última
+            setCurrentPage(maxPages);
+            setOffset((maxPages - 1) * pokemonsPerPage);
+        } else if (currentPage <= maxPages) {
             setOffset(offset - pokemonsPerPage);
             setCurrentPage(currentPage - 1);
         }
     }
 
-    const handlePageFoward = () => {
-        if (currentPage > 1) {
+    const GoFoward = () => {
+        if (currentPage == maxPages) { //Se estiver na última página, retorna para a primeira
+            setOffset(0);
+            setCurrentPage(1);
+        } else if (currentPage >= 1) {
             setOffset(offset + pokemonsPerPage);
             setCurrentPage(currentPage + 1);
         }
     }
 
     return (<PaginationContext.Provider value={{
-        handlePageBack, handlePageFoward, offset, currentPage
+        GoBack, GoFoward, offset, currentPage, maxPages
     }}>{ children }</PaginationContext.Provider>)
 }

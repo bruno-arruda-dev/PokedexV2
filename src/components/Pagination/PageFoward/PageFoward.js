@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './PageFoward.css';
 import '../Arrow.css';
+import { PaginationContext } from '../../Context/PaginationContext';
 
 function PageFoward() {
+  const { GoFoward } = useContext(PaginationContext);
+
+  const handlePageFoward = () => {
+    GoFoward()
+  }
+
   return (
-    <div>
-      <div className='pagefoward arrow'></div>
-    </div>
+    <div  onClick={handlePageFoward}
+          onToutch={handlePageFoward}
+          className='pagefoward arrow'></div>
   )
 }
 

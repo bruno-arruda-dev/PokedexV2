@@ -6,12 +6,12 @@ import './Pagination.css';
 
 function Pagination() {
 
-  const { handlePageBack, handlePageFoward, offset, currentPage } = useContext(PaginationContext);
+  const { maxPages, currentPage } = useContext(PaginationContext);
 
   return (
     <div className='pagination'>
       <PageBack />
-      <div>{currentPage} / {offset} </div>
+      <div>{currentPage} / {maxPages} </div>
       <PageFoward />
     </div>
   )

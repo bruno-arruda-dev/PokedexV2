@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { PaginationContext } from '../../Context/PaginationContext';
 import '../Arrow.css';
 
 function PageBack() {
+  const { GoBack } = useContext(PaginationContext);
+  
+    const handlePageBack = () => {
+      GoBack();
+    }
+
   return (
-    <div className='pageback arrow'></div>
+    <div  onClick={handlePageBack}
+          onTouch={handlePageBack}
+          className='pageback arrow'></div>
   )
 }
 
