@@ -3,8 +3,8 @@ import './App.css';
 import { GetPokemonsProvider } from './components/Context/GetPokemonsContext';
 import Header from './components/Header/Header';
 import Pokedex from './components/Pokedex/Pokedex';
-import Pagination from './components/Pagination/Pagination';
 import { PaginationProvider } from './components/Context/PaginationContext';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <GetPokemonsProvider>
         <Header />
         <Pokedex />
-        <Pagination />
+        <Footer />
       </GetPokemonsProvider>
     </PaginationProvider>
   );

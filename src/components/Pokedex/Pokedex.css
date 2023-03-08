@@ -3,4 +3,5 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    min-height: 60vh;
 }
