@@ -1,11 +1,11 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import { getPokemons } from '../API/GetPokemonsAPI';
+import { PaginationContext } from './PaginationContext';
 
 export const GetPokemonsContext = createContext();
 
 export const GetPokemonsProvider = ({ children }) => {
-  const [offset, setOffset] = useState(0);
-  const [pokemonsPerPage, setPokemonsPerPage] = useState(50);
+  const {offset, pokemonsPerPage} = useContext(PaginationContext);
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export const GetPokemonsProvider = ({ children }) => {
   }, [offset, pokemonsPerPage]);
 
   return (
-    <GetPokemonsContext.Provider value={{ pokemonsPerPage, offset, pokemons }}>
+    <GetPokemonsContext.Provider value={{ pokemons }}>
       {children}
     </GetPokemonsContext.Provider>
   );
