@@ -29,7 +29,9 @@ export const PaginationProvider = ({ children }) => {
         }
     }
 
-    return (<PaginationContext.Provider value={{
-        GoBack, GoFoward, offset, currentPage, maxPages, limit
-    }}>{ children }</PaginationContext.Provider>)
+    return (
+        <PaginationContext.Provider value={{
+            GoBack, GoFoward, offset, currentPage, maxPages, limit
+        }}>{ children }</PaginationContext.Provider>
+    )
 }

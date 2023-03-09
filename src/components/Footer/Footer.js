@@ -7,10 +7,10 @@ function Footer() {
     <footer className='footer'>
       <Pagination />
       <div className='socialMedias'>
-            <a href="https://github.com/BrunoArrm/pokedex" target="_blank">
+            <a href="https://github.com/BrunoArrm/pokedex">
                 <div className='socialMedia github'></div>
             </a>
-            <a href="https://linkedin.com/in/bruno-arruda-dev" target="_blank">
+            <a href="https://linkedin.com/in/bruno-arruda-dev">
                 <div className='socialMedia linkedin'></div>
             </a>
         </div>
