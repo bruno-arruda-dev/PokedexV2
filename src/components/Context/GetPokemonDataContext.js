@@ -23,6 +23,7 @@ export const GetPokemonDataProvider = ({children}) => {
 
     const updatePokemonName = ( name ) => { // função invocada na Searchbar, responsável por receber o nome do pokemon e armazenar na variável "pokemomName" o valor recebido
         setName(name.toLowerCase());
+        console.log(`Recebido para busca ${name}`);
     };
 
     useEffect(() => {

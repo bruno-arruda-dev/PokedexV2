@@ -1,0 +1,57 @@
+.graphicLine {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    font-weight: bold;
+    color: var(--detail-text-color);
+}
+
+.content {
+    text-align: right;
+    width: 2.6rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.lineStat-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lineStat{
+    height: 10px;
+    width: 100px;
+    border-radius: 50px;
+    border: 2px solid black
+}
+
+.value {
+    width: 2rem;
+    font-weight: bold;
+}
+
+.hp {
+    background-color: rgb(0, 155, 18);
+}
+
+.atk {
+    background-color: rgb(187, 0, 0);
+}
+
+.xatk {
+    background-color: red;
+}
+
+.def {
+    background-color: rgb(7, 0, 137);
+}
+
+.xdef {
+    background-color: rgb(0, 17, 255);
+}
+
+.spd {
+    background-color: rgb(255, 230, 0);
+}

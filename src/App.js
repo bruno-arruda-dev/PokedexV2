@@ -2,10 +2,11 @@ import React from 'react';
 import './App.css';
 import { GetPokemonsProvider } from './components/Context/GetPokemonsContext';
 import { PaginationProvider } from './components/Context/PaginationContext';
+import { GetPokemonDataProvider } from './components/Context/GetPokemonDataContext';
 import Header from './components/Header/Header';
+import MyPokemon from './components/MyPokemon/MyPokemon';
 import Pokedex from './components/Pokedex/Pokedex';
 import Footer from './components/Footer/Footer';
-import { GetPokemonDataProvider } from './components/Context/GetPokemonDataContext';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <GetPokemonsProvider>
         <GetPokemonDataProvider>
           <Header />
+          <MyPokemon />
           <Pokedex />
           <Footer />
         </GetPokemonDataProvider>
