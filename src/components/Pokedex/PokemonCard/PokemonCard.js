@@ -4,6 +4,7 @@ import './CardMainType.css';
 import './CardAllTypes.css';
 import { getPokemonData } from '../../API/GetPokemonsAPI';
 import { GetPokemonDataContext } from '../../Context/GetPokemonDataContext';
+import { FavoriteContext } from '../../Context/FavoriteContext';
 
 function PokemonCard( { pokemon } ) {
     const { updatePokemonName } = useContext(GetPokemonDataContext);
@@ -13,6 +14,8 @@ function PokemonCard( { pokemon } ) {
     const [mainType, setMainType] = useState("");
     const [secType, setSecType] = useState("");
     const [id, setId] = useState("");
+    const { favorite, favoritesList } = useContext(FavoriteContext);
+    const [heart, setHeart] = useState("💛");
 
     useEffect(() => {
         const fetchPokemon = async () => {
@@ -27,11 +30,16 @@ function PokemonCard( { pokemon } ) {
         fetchPokemon();
     }, [pokemon]);
 
-    const handleCardClick = () => {
-        detailPokemon();
-    }
+    const handleClickHeartButton = (event) => {
+        event.stopPropagation();
+        favorite(pokemon);
+      }
 
-    const detailPokemon = () => {
+    useEffect(()=>{
+        localStorage.getItem(pokemon) ? setHeart("❤️") : setHeart("💛");
+      }, [name, favoritesList]);
+
+    const handleCardClick = () => {
           let nameFix = name.trim();
           nameFix = nameFix.toLowerCase();
           updatePokemonName(name);
@@ -41,6 +49,7 @@ function PokemonCard( { pokemon } ) {
   return (
     <div className='pokemonCard' id={pokemon} onClick={handleCardClick}>
         <img className='pokemonCard-img' src={mainImg ? mainImg : secImg} alt={pokemon}/>
+        <button onClick={handleClickHeartButton}>{heart}</button>
         <div className={`pokemonCard-container bg-${mainType}`}>
             <h3 className='pokemon-title'>{name}</h3>
             <p className='pokemon-id'>#{id}</p>

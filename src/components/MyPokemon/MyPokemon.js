@@ -10,11 +10,16 @@ function MyPokemon() {
 
   const { pokemon, mainImg, secImg, mainType, hide, erro } = useContext(GetPokemonDataContext);
   // const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
-  const { favorite, favoriteList } = useContext(FavoriteContext);
+  const { favorite, favoritesList } = useContext(FavoriteContext);
+  const [heart, setHeart] = useState("💛");
 
   const handleClickHeartButton = (event) => {
     favorite(pokemon);
   }
+
+  useEffect(()=>{
+    localStorage.getItem(pokemon) ? setHeart("❤️") : setHeart("💛");
+  }, [pokemon, favoritesList]);
 
   const goTo = () => {
     const myPokemon = document.getElementById(pokemon);
@@ -36,7 +41,7 @@ function MyPokemon() {
           !hide && (
             <div className={`myPokemon bg-${mainType}`} id="myPokemon">
               <p className="myPokemon-title">{pokemon}</p>
-              <button onClick={handleClickHeartButton}>❤️</button>
+              <button onClick={handleClickHeartButton}>{heart}</button>
               <div className="pokemonStats">
                 <div className="myPokemon-battleStats">
                   <BattleStats />

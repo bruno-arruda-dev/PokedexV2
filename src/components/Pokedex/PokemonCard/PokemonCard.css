@@ -10,6 +10,15 @@
     cursor: pointer;
 }
 
+.pokemonCard button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 0.3rem;
+}
+
 .pokemonCard:hover {
     transform: scale(.95);
 }

@@ -6,21 +6,24 @@ export const FavoriteProvider = ({children}) => {
     const [favoritesList, setFavoritesList] = useState([]);
 
     const favorite = (pokemon) => {
-        console.log(`Recebido para favoritar ${pokemon}`);
-    }
 
-    // const handleClickHeartButton = (event) => {
-    //     event.stopPropagation();
-    //     if (localStorage.getItem(pokemon)) {
-    //       localStorage.removeItem(pokemon);
-    //       setHeart("💛");
-    //       console.log(`Desfavoritou: ${pokemon}`);
-    //     } else {
-    //       localStorage.setItem(pokemon, pokemon);
-    //       setHeart("❤️");
-    //       console.log(`Favoritou: ${pokemon}`);
-    //     }
-    //   }
+        if (localStorage.getItem(pokemon)) {
+            localStorage.removeItem(pokemon)
+            console.log(`Pokemon removido dos favoritos: ${pokemon}`);
+        } else {
+            localStorage.setItem(pokemon, pokemon);
+            console.log(`Favoritou: ${pokemon}`);
+        }
+
+        for (let i = 0; i < localStorage.length; i++) {
+            let myPokemons = [];
+            myPokemons.unshift(localStorage.key(i));
+            setFavoritesList(myPokemons);
+        }
+
+        console.log(`Lista atualizada de pokemons favoritos: ${favoritesList}`);
+
+    }
 
     return(
         <FavoriteContext.Provider value={{favorite, favoritesList}}>
