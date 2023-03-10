@@ -28,6 +28,10 @@ function PokemonCard( { pokemon } ) {
     }, [pokemon]);
 
     const handleCardClick = () => {
+        detailPokemon();
+    }
+
+    const detailPokemon = () => {
           let nameFix = name.trim();
           nameFix = nameFix.toLowerCase();
           updatePokemonName(name);

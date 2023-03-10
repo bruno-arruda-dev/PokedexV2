@@ -1,9 +1,9 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, createContext } from "react";
 import { getPokemonData } from "../API/GetPokemonsAPI";
 
 export const GetPokemonDataContext = createContext();
 
-export const GetPokemonDataProvider = ({children}) => {
+export const GetPokemonDataProvider = ({ children }) => {
 
     const [pokemon, setPokemon] = useState(""); // Responsável por armazenar o nome do pokemon que é recebido da Searchbar
     const [mainImg, setMainImg] = useState("");
@@ -21,7 +21,7 @@ export const GetPokemonDataProvider = ({children}) => {
     const [hide, setHide] = useState(true);
     const [erro, setErro] = useState("");
 
-    const updatePokemonName = ( name ) => { // função invocada na Searchbar, responsável por receber o nome do pokemon e invocar o fetchPokemon
+    const updatePokemonName = (name) => { // função invocada na Searchbar, responsável por receber o nome do pokemon e invocar o fetchPokemon
         fetchPokemon(name.toLowerCase());
         console.log(`Recebido para busca ${name}`);
     };
@@ -68,14 +68,16 @@ export const GetPokemonDataProvider = ({children}) => {
             }
             setHide(false);
 
-                    //Navega até o componente MyPokemonCard após ele ser carregado
-        let myPokemon = "element";
-        myPokemon = document.getElementById("myPokemon");
-        myPokemon.scrollIntoView({behavior: 'smooth', block: "start"});
-        }
-    }; 
+            window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    return  <GetPokemonDataContext.Provider value={{ updatePokemonName, pokemon, mainImg, secImg, id, height, weight, hp, atk, xAtk, def, xDef, spd, mainType, hide, erro }}>
-                {children}
-            </GetPokemonDataContext.Provider>;
+            // const myPokemon = document.getElementById('myPokemon');
+            // setTimeout(() => {
+            //     myPokemon.scrollIntoView({ behavior: 'smooth', block: "start" });
+            // }, 5000); // Espera 500ms antes de chamar scrollIntoView
+        }
+    };
+
+    return <GetPokemonDataContext.Provider value={{ updatePokemonName, pokemon, mainImg, secImg, id, height, weight, hp, atk, xAtk, def, xDef, spd, mainType, hide, erro }}>
+        {children}
+    </GetPokemonDataContext.Provider>;
 }
