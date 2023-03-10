@@ -12,7 +12,6 @@ function PageFoward() {
 
   return (
     <div  onClick={handlePageFoward}
-          onToutch={handlePageFoward}
           className='pagefoward arrow'></div>
   )
 }

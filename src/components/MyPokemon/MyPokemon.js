@@ -52,14 +52,14 @@ const handleClickHeartButton = (event) => {
             !hide && (
               <div className={`myPokemon bg-${mainType}`} id="myPokemon">
                 <p className="myPokemon-title">{name} / {erro} / {hide}</p>
-                <button onClick={handleClickHeartButton} onPress={handleClickHeartButton}>{heart}</button>
+                <button onClick={handleClickHeartButton}>{heart}</button>
                 <div className="pokemonStats">
                   <div className="myPokemon-battleStats">
                       <BattleStats />
                       <NormalStats />
                   </div>
                   <div className="myPokemon-img">
-                    <img src={mainImg ? mainImg : secImg} alt={name} onClick={backToPokemonCard} onPress={backToPokemonCard} />
+                    <img src={mainImg ? mainImg : secImg} alt={name} onClick={backToPokemonCard} />
                   </div>
                 </div>
               </div>

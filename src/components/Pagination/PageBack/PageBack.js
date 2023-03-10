@@ -11,7 +11,6 @@ function PageBack() {
 
   return (
     <div  onClick={handlePageBack}
-          onTouch={handlePageBack}
           className='pageback arrow'></div>
   )
 }

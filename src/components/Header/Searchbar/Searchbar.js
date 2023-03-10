@@ -30,7 +30,6 @@ function Searchbar() {
         ></input>
         <button className='searchbar-button' 
                 onClick={handleButtonClick} 
-                onPress={handleButtonClick}
         ></button>
     </div>
   )
