@@ -65,21 +65,6 @@ export const GetPokemonDataProvider = ({children}) => {
                   }
                 
                 setHide(false);
-            } else {
-                setName("");
-                setMainImg("");
-                setSecImg("");
-                setId("");
-                setHeight("");
-                setWeight("");
-                setHp("");
-                setAtk("");
-                setXAtk("");
-                setDef("");
-                setXDef("");
-                setSpd("");
-                setMainType("");
-                setErro("");
             }
         };
       
