@@ -7,33 +7,28 @@ import BattleStats from './BattleStats/BattleStats';
 
 function MyPokemon() {
 
-    const { name, mainImg, secImg, mainType, hide, erro} = useContext(GetPokemonDataContext);
+    const { pokemon, mainImg, secImg, mainType, hide, erro} = useContext(GetPokemonDataContext);
     // const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
     const [heart, setHeart] = useState("💛");
 
-    const backToPokemonCard = () => {
-      const myPokemon = document.getElementById(name);
-      myPokemon.scrollIntoView({behavior: 'smooth', block: "start"});
-  };
-
   useEffect(()=>{
-    if(localStorage.getItem(name)) {
+    if(localStorage.getItem(pokemon)) {
         setHeart("❤️")
     } else {
         setHeart("💛")
     }
-  },[name])
+  },[pokemon])
 
 const handleClickHeartButton = (event) => {
     event.stopPropagation();
-    if (localStorage.getItem(name)) {
-        localStorage.removeItem(name);
+    if (localStorage.getItem(pokemon)) {
+        localStorage.removeItem(pokemon);
         setHeart("💛");
-        console.log(`Desfavoritou: ${name}`);
+        console.log(`Desfavoritou: ${pokemon}`);
     } else {
-        localStorage.setItem(name, name);
+        localStorage.setItem(pokemon, pokemon);
         setHeart("❤️");
-        console.log(`Favoritou: ${name}`);
+        console.log(`Favoritou: ${pokemon}`);
     }
 }
 
@@ -45,13 +40,13 @@ const handleClickHeartButton = (event) => {
             <div className={`myPokemon mainType-normal`} style={{height: "fit-content"}}>
               <div className='erro-message-img'></div>
               <p>
-                Pokemon "{name}" não foi encontrado!
+                Pokemon "{pokemon}" não foi encontrado!
               </p>
             </div> 
           : 
             !hide && (
               <div className={`myPokemon bg-${mainType}`} id="myPokemon">
-                <p className="myPokemon-title">{name} / {erro} / {hide}</p>
+                <p className="myPokemon-title">{pokemon} / {erro} / {hide}</p>
                 <button onClick={handleClickHeartButton}>{heart}</button>
                 <div className="pokemonStats">
                   <div className="myPokemon-battleStats">
@@ -59,7 +54,7 @@ const handleClickHeartButton = (event) => {
                       <NormalStats />
                   </div>
                   <div className="myPokemon-img">
-                    <img src={mainImg ? mainImg : secImg} alt={name} onClick={backToPokemonCard} />
+                    <img src={mainImg ? mainImg : secImg} alt={pokemon} />
                   </div>
                 </div>
               </div>
@@ -67,6 +62,5 @@ const handleClickHeartButton = (event) => {
         </>
       );
     }
-    
 
 export default MyPokemon;
