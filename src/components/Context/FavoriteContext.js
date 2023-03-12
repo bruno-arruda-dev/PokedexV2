@@ -4,7 +4,6 @@ export const FavoriteContext = createContext();
 
 export const FavoriteProvider = ({children}) => {
     const [favoritesList, setFavoritesList] = useState([]);
-    const [length, setLength] = useState(0);
     let myPokemons = [];
 
     const favorite = (pokemon) => {
@@ -18,12 +17,13 @@ export const FavoriteProvider = ({children}) => {
         }
 
         for (let i = 0; i < localStorage.length + 1; i++) {
-            myPokemons.push(localStorage.key[0]);
+            const key = localStorage.key(i);
+            const value = localStorage.getItem(key);
+            myPokemons.push(value);
         }
         
         setFavoritesList(myPokemons);
-        setLength(localStorage.length);
-        console.log(`Lista atualizada possui ${length} pokemon(s) favorito(s): ${localStorage}`);
+        console.log(`Lista atualizada possui ${localStorage.length} pokemon(s) favorito(s): ${myPokemons}`);
 
     }
 
