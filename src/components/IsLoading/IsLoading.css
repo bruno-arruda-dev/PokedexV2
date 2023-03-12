@@ -1,0 +1,8 @@
+.isLoading {
+    font-weight: bold;
+    font-family: 'Tilt Warp', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

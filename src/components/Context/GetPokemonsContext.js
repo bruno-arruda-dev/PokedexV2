@@ -7,11 +7,14 @@ export const GetPokemonsContext = createContext();
 export const GetPokemonsProvider = ({ children }) => {
   const {limit, offset} = useContext(PaginationContext);
   const [pokemons, setPokemons] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function fetchPokemons() {
+      setIsLoading(true);
       const pokemonsData = await getPokemons(limit, offset);
       setPokemons(pokemonsData.results);
+      setIsLoading(false);
       console.log(
         `Busca de pokemons concluída: ${limit} por página e deslocamento iniciando em ${offset}`
       );
@@ -20,7 +23,7 @@ export const GetPokemonsProvider = ({ children }) => {
   }, [offset, limit]);
 
   return (
-    <GetPokemonsContext.Provider value={{ pokemons }}>
+    <GetPokemonsContext.Provider value={{ pokemons, isLoading }}>
       {children}
     </GetPokemonsContext.Provider>
   );

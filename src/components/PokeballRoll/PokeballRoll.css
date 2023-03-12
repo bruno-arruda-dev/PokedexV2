@@ -1,0 +1,20 @@
+.pokeball {
+    width: 75px;
+    height: 75px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    background-image: url("../../../public/images/logo-black.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: infRoll 3s infinite linear;
+}
+
+@keyframes infRoll {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

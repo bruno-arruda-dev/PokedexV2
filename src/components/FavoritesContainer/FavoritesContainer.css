@@ -7,4 +7,10 @@
     background-color: var(--opacity-text-color);
     margin: .5%;
     border-radius: var(--main-radius);
+    animation: emerge-container .5s ease-in-out;
+}
+
+@keyframes emerge-container {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
 }
