@@ -1,0 +1,13 @@
+:root {
+  --main-detail-color: #6e0000;
+  --main-radius: 10px;
+  --main-text-color: rgb(121, 121, 121);
+  --opacity-text-color: rgba(121, 121, 121, 0.205);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}

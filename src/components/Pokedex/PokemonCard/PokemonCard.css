@@ -1,0 +1,82 @@
+.pokemonCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 5px;
+    width: 300px;
+    height: 150px;
+    transition: .1s ease-in;
+    cursor: pointer;
+}
+
+.pokemonCard button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 0.3rem;
+}
+
+.pokemonCard:hover {
+    transform: scale(.95);
+}
+
+.pokemonCard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 7px;
+    color: var(--main-text-color);
+    border-radius: var(--main-radius);
+    height: 70%;
+    width: 100%;
+    box-shadow: 1px 1px 3px 1px var(--main-text-color);
+}
+
+.pokemon-title {
+    text-transform: capitalize;
+    color: var(--main-text-color);
+}
+
+.pokemon-id {
+    color: var(--opacity-text-color);
+    position: absolute;
+    font-size: 2rem;
+    top: 35%;
+    left: 22%;
+    font-family: 'Climate Crisis', cursive;
+}
+
+.pokemonCard-img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.pokemonCard-types {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 17px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+    border-radius: 10px;
+}
+
+.st {
+    margin-right: 7px;
+}
