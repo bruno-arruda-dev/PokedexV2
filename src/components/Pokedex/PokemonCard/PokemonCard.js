@@ -5,8 +5,9 @@ import './CardAllTypes.css';
 import { getPokemonData } from '../../API/GetPokemonsAPI';
 import { GetPokemonDataContext } from '../../Context/GetPokemonDataContext';
 import { FavoriteContext } from '../../Context/FavoriteContext';
+import PokeballRoll from '../../PokeballRoll/PokeballRoll';
 
-function PokemonCard( { pokemon } ) {
+function PokemonCard({ pokemon }) {
     const { updatePokemonName } = useContext(GetPokemonDataContext);
     const [name, setName] = useState("");
     const [mainImg, setMainImg] = useState("");
@@ -16,9 +17,11 @@ function PokemonCard( { pokemon } ) {
     const [id, setId] = useState("");
     const { favorite, favoritesList } = useContext(FavoriteContext);
     const [heart, setHeart] = useState("💛");
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const fetchPokemon = async () => {
+            setIsLoading(true);
             const currentPokemon = await getPokemonData(pokemon);
             setName(currentPokemon.name);
             setMainImg(currentPokemon.sprites?.other?.dream_world.front_default);
@@ -26,6 +29,7 @@ function PokemonCard( { pokemon } ) {
             setMainType(currentPokemon.types[0]?.type.name);
             setSecType(currentPokemon.types[1]?.type.name);
             setId(currentPokemon.id);
+            setIsLoading(false);
         };
         fetchPokemon();
     }, [pokemon]);
@@ -33,33 +37,37 @@ function PokemonCard( { pokemon } ) {
     const handleClickHeartButton = (event) => {
         event.stopPropagation();
         favorite(pokemon);
-      }
+    }
 
-    useEffect(()=>{
+    useEffect(() => {
         localStorage.getItem(pokemon) ? setHeart("❤️") : setHeart("💛");
-      }, [name, favoritesList]);
+    }, [name, favoritesList]);
 
     const handleCardClick = () => {
-          let nameFix = name.trim();
-          nameFix = nameFix.toLowerCase();
-          updatePokemonName(name);
-          console.log(`Enviado para busca: ${nameFix}`);
-      } 
+        let nameFix = name.trim();
+        nameFix = nameFix.toLowerCase();
+        updatePokemonName(name);
+        console.log(`Enviado para busca: ${nameFix}`);
+    }
 
-  return (
-    <div className='pokemonCard' id={pokemon} onClick={handleCardClick}>
-        <img className='pokemonCard-img' src={mainImg ? mainImg : secImg} alt={pokemon}/>
-        <button onClick={handleClickHeartButton}>{heart}</button>
-        <div className={`pokemonCard-container bg-${mainType}`}>
-            <h3 className='pokemon-title'>{name}</h3>
-            <p className='pokemon-id'>#{id}</p>
-            <div className='pokemonCard-types'>
-                <div className={`type st ${mainType}`} st>{mainType}</div>
-                { secType && <div className={`type nd ${secType}`}>{secType}</div> }
-            </div>
+    return (
+        <div className='pokemonCard' id={pokemon} onClick={handleCardClick}>
+            {isLoading ? <PokeballRoll /> : (
+                <>
+                    <img className='pokemonCard-img' src={mainImg ? mainImg : secImg} alt={pokemon} />
+                    <button onClick={handleClickHeartButton}>{heart}</button>
+                    <div className={`pokemonCard-container bg-${mainType}`}>
+                        <h3 className='pokemon-title'>{name}</h3>
+                        <p className='pokemon-id'>#{id}</p>
+                        <div className='pokemonCard-types'>
+                            <div className={`type st ${mainType}`} st>{mainType}</div>
+                            {secType && <div className={`type nd ${secType}`}>{secType}</div>}
+                        </div>
+                    </div>
+                </>
+            )}
         </div>
-    </div>
-  )
+    )
 }
 
 export default PokemonCard;
