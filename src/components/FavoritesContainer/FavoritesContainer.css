@@ -1,0 +1,10 @@
+.favoritesContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: var(--opacity-text-color);
+    margin: .5%;
+    border-radius: var(--main-radius);
+}

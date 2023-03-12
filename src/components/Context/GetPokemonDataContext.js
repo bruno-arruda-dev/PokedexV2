@@ -33,6 +33,7 @@ export const GetPokemonDataProvider = ({ children }) => {
 
         if (currentPokemon === undefined) { //Tratativa de erro para pokemon não encontrado. A API retorna undefined nesses casos
             console.log("Pokemon não encontrado");
+            setPokemon(pokemon);
             setErro("Pokemon não encontrado");
 
         } else if (pokemon !== "") {
