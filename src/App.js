@@ -8,6 +8,7 @@ import Header from './components/Header/Header';
 import MyPokemon from './components/MyPokemon/MyPokemon';
 import Pokedex from './components/Pokedex/Pokedex';
 import Footer from './components/Footer/Footer';
+import FavoritesContainer from './components/FavoritesContainer/FavoritesContainer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <FavoriteProvider>
             <Header />
             <MyPokemon />
+            <FavoritesContainer />
             <Pokedex />
             <Footer />
           </FavoriteProvider>
