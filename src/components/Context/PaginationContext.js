@@ -5,7 +5,7 @@ export const PaginationContext = createContext();
 export const PaginationProvider = ({ children }) => {
     const [offset, setOffset] = useState(0); //Deslocamento
     const [currentPage, setCurrentPage] = useState(1); //Página atual
-    const limit = 100; //Máximo de pokemons por página
+    const limit = 50; //Máximo de pokemons por página
     const maxPokemons = 1281; //Máximo de pokemons na API
     const maxPages = Math.ceil(maxPokemons / limit); //Máximo de páginas
 

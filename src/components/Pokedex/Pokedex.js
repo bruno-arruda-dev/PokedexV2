@@ -6,16 +6,16 @@ import PokemonCard from './PokemonCard/PokemonCard';
 
 function Pokedex() {
 
-  const {pokemons, isLoading} = useContext(GetPokemonsContext);
+  const { pokemons, isLoading } = useContext(GetPokemonsContext);
 
   return (
     <div className='pokedex'>
-      { isLoading ? (
-          <IsLoading />
-        ) : (
-          pokemons.map( (pokemon) => (
-            <PokemonCard key={pokemon.name} pokemon={pokemon.name} />
-          ))
+      {isLoading ? (
+        <IsLoading />
+      ) : (
+        pokemons.map((pokemon) => (
+          <PokemonCard key={pokemon.name} pokemon={pokemon.name} />
+        ))
       )
       }
     </div>

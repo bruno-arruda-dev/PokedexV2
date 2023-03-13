@@ -8,6 +8,7 @@ import { FavoriteContext } from '../../Context/FavoriteContext';
 import PokeballRoll from '../../PokeballRoll/PokeballRoll';
 
 function PokemonCard({ pokemon }) {
+    const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
     const { updatePokemonName } = useContext(GetPokemonDataContext);
     const [name, setName] = useState("");
     const [mainImg, setMainImg] = useState("");
@@ -50,11 +51,15 @@ function PokemonCard({ pokemon }) {
         console.log(`Enviado para busca: ${nameFix}`);
     }
 
+
+
     return (
         <div className='pokemonCard' id={pokemon} onClick={handleCardClick}>
             {isLoading ? <PokeballRoll /> : (
                 <>
-                    <img className='pokemonCard-img' src={mainImg ? mainImg : secImg} alt={pokemon} />
+                    <img    className={mainImg ? "pokemonCard-img" : (secImg ? "pokemonCard-img" : "not-Found-Img-PokemonCard")} //Aplica a classe adequada para quando nem a imagem principal, nem a secundárias são encontradas
+                            src={mainImg ? mainImg : (secImg ? secImg : logo)} //Verifica se a imagem principal ou a secundária foram encontradas. Se não aplica-se a LOGO padrão da API
+                            alt={pokemon} />
                     <button onClick={handleClickHeartButton}>{heart}</button>
                     <div className={`pokemonCard-container bg-${mainType}`}>
                         <h3 className='pokemon-title'>{name}</h3>

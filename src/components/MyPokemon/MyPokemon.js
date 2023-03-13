@@ -7,7 +7,7 @@ import BattleStats from './BattleStats/BattleStats';
 import { FavoriteContext } from '../Context/FavoriteContext';
 
 function MyPokemon() {
-
+  const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
   const { pokemon, mainImg, secImg, mainType, hide, erro } = useContext(GetPokemonDataContext);
   // const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
   const { favorite, favoritesList } = useContext(FavoriteContext);
@@ -47,8 +47,9 @@ function MyPokemon() {
                   <BattleStats />
                   <NormalStats />
                 </div>
-                <div className="myPokemon-img">
-                  <img src={mainImg ? mainImg : secImg} alt={pokemon} onClick={goTo} />
+                <div className={mainImg ? "myPokemon-img" : (secImg ? "myPokemon-img" : "not-Found-Img-MyPokemon")}>
+                  <img  src={mainImg ? mainImg : (secImg ? secImg : logo)} //Verifica se a imagem principal ou a secundária foram encontradas. Se não aplica-se a LOGO padrão da API
+                        alt={pokemon} onClick={goTo} />
                 </div>
               </div>
             </div>

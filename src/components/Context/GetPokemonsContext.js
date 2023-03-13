@@ -5,7 +5,7 @@ import { PaginationContext } from './PaginationContext';
 export const GetPokemonsContext = createContext();
 
 export const GetPokemonsProvider = ({ children }) => {
-  const {limit, offset} = useContext(PaginationContext);
+  const { limit, offset } = useContext(PaginationContext);
   const [pokemons, setPokemons] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 

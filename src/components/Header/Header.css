@@ -2,7 +2,28 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     background-color: var(--main-detail-color);
     padding: 10px;
     height: 20vh;
+}
+
+@media (max-width: 500px) {
+    .header {
+        justify-content: center;
+        height: fit-content;
+    }
+
+    .header img {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 270px) {
+    .header img {
+        max-width: 99%;
+        max-height: 99%;
+        width: auto;
+        height: auto;
+    }
 }

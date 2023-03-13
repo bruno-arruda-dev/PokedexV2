@@ -1,8 +1,24 @@
-.favoriteCard:hover {
-    transform: scale(1.1);
+.favoriteCard {
     cursor: pointer;
+    transition: .2s ease-in;
 }
 
-.favoriteCard {
+.favoriteCard:hover {
+    transform: scale(1.05);
+}
+
+/* Aplica-se este estilo quando as imagens do pokemon não são encontradas */
+.not-Found-Img-FavoriteCard {
+    max-width: 50px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    margin: 5px 10px;
     transition: .2s ease-in;
+}
+
+.not-Found-Img-FavoriteCard:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }

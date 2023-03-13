@@ -1,5 +1,7 @@
 .searchbar {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .searchbar-input,
@@ -52,4 +54,20 @@
   @keyframes toutch {
     0% { background-size: 40% }
     100% {background-size: 80%;}
+  }
+
+  @media (max-width: 500px) {
+    .searchbar {
+      width: 99%;
+    }
+
+    .searchbar-input {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 232px) {
+    .searchbar-input {
+      font-size: 5vw;
+    }
   }

@@ -3,7 +3,7 @@ import './PokeballRoll.css';
 
 function PokeballRoll(context) {
   return (
-    <div className={"pokeball " + {context}}></div>
+    <div className={"pokeball " + { context }}></div>
   )
 }
 

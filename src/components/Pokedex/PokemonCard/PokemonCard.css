@@ -42,17 +42,27 @@
 }
 
 .pokemon-id {
-    color: var(--opacity-text-color);
+    color: rgba(255, 255, 255, 0.692);
     position: absolute;
-    font-size: 2rem;
-    top: 35%;
-    left: 22%;
+    font-size: 1rem;
+    top: 45%;
+    left: 5%;
     font-family: 'Climate Crisis', cursive;
 }
 
 .pokemonCard-img {
     width: 150px;
     height: 150px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.not-Found-Img-PokemonCard {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
     position: absolute;
     top: 0;
     right: 0;
@@ -79,4 +89,15 @@
 
 .st {
     margin-right: 7px;
+}
+
+@media (max-width: 620px) {
+    .pokemonCard {
+        width: 99%;
+    }
+
+    .pokemon-id {
+        top: 45%;
+        left: 30%;
+    }
 }
