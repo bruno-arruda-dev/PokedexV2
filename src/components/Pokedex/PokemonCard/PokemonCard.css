@@ -42,12 +42,12 @@
 }
 
 .pokemon-id {
-    color: rgba(255, 255, 255, 0.692);
+    color: white;
     position: absolute;
     font-size: 1rem;
     top: 45%;
     left: 5%;
-    font-family: 'Climate Crisis', cursive;
+    font-family: 'Oswald', sans-serif;
 }
 
 .pokemonCard-img {

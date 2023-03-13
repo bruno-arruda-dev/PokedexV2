@@ -11,7 +11,7 @@
 }
 
 .bg-bug {
-    background-color: rgb(251, 255, 173);
+    background-color: rgb(162, 165, 113);
 }
 
 .bg-normal {
@@ -23,7 +23,7 @@
 }
 
 .bg-electric {
-    background-color: rgb(255, 255, 0);
+    background-color: rgb(209, 209, 6);
 }
 
 .bg-ground {
@@ -43,7 +43,7 @@
 }
 
 .bg-rock {
-    background-color: rgb(123, 120, 120);
+    background-color: rgb(163, 163, 163);
 }
 
 .bg-ghost {
