@@ -20,7 +20,7 @@
 }
 
 .pokemonCard:hover {
-    transform: scale(.95);
+    transform: scale(1.05);
 }
 
 .pokemonCard-container {
