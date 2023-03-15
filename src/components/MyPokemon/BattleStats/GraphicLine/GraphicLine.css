@@ -12,6 +12,8 @@
     text-align: left;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: var(--text-default-size);
+    color: var(--main-text-color);
 }
 
 .lineStat-container{
@@ -26,8 +28,8 @@
 .lineStat{
     height: 10px;
     width: 100px;
-    border-radius: 50px;
-    border: 2px solid black
+    border-right: 2px solid rgb(255, 255, 255);
+    background-color: var(--main-text-color);
 }
 
 .value {
@@ -35,7 +37,7 @@
     font-weight: bold;
 }
 
-.hp {
+/* .hp {
     background-color: rgb(0, 155, 18);
 }
 
@@ -57,4 +59,4 @@
 
 .spd {
     background-color: rgb(255, 230, 0);
-}
+} */

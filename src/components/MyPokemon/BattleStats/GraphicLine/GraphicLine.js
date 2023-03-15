@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import './GraphicLine.css';
 
 function GraphicLine(props) {
-
     const {content, value} = props;
 
     useEffect(() => {
