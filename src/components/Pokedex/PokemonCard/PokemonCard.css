@@ -112,7 +112,7 @@
 
 @media (max-width: 620px) {
     .pokemonCard {
-        width: 98%;
+        width: 90%;
     }
 
     .pokemon-id {
