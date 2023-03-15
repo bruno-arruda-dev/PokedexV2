@@ -57,13 +57,13 @@ function PokemonCard({ pokemon }) {
         <div className='pokemonCard' id={pokemon} onClick={handleCardClick}>
             {isLoading ? <PokeballRoll /> : (
                 <>
-                    <img    className={mainImg ? "pokemonCard-img" : (secImg ? "pokemonCard-img" : "not-Found-Img-PokemonCard")} //Aplica a classe adequada para quando nem a imagem principal, nem a secundárias são encontradas
-                            src={mainImg ? mainImg : (secImg ? secImg : logo)} //Verifica se a imagem principal ou a secundária foram encontradas. Se não aplica-se a LOGO padrão da API
-                            alt={pokemon} />
+                    <img className={mainImg ? "pokemonCard-img" : (secImg ? "pokemonCard-img" : "not-Found-Img-PokemonCard")} //Aplica a classe adequada para quando nem a imagem principal, nem a secundárias são encontradas
+                        src={mainImg ? mainImg : (secImg ? secImg : logo)} //Verifica se a imagem principal ou a secundária foram encontradas. Se não aplica-se a LOGO padrão da API
+                        alt={pokemon} />
                     <button onClick={handleClickHeartButton}>{heart}</button>
                     <div className={`pokemonCard-container bg-${mainType}`}>
                         <h3 className='pokemon-title'>{name}</h3>
-                        <p className='pokemon-id'>#{id}</p>
+                        <p className='pokemon-id'>{id}</p>
                         <div className='pokemonCard-types'>
                             <div className={`type st ${mainType}`} st>{mainType}</div>
                             {secType && <div className={`type nd ${secType}`}>{secType}</div>}
