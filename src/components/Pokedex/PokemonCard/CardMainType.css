@@ -1,71 +1,71 @@
 .bg-grass {
-    background-color: rgb(141, 238, 132);
+    background-color: #7AC74C;
 }
 
 .bg-fire {
-    background-color: rgb(255, 121, 121);
+    background-color: #EE8130;
 }
 
 .bg-water {
-    background-color: rgb(173, 248, 255);
+    background-color: #6390F0;
 }
 
 .bg-bug {
-    background-color: rgb(162, 165, 113);
+    background-color: #A6B91A;
 }
 
 .bg-normal {
-    background-color: rgb(230, 230, 230);
+    background-color: #A8A77A;
 }
 
 .bg-poison {
-    background-color: rgb(215, 173, 255);
+    background-color: #A33EA1;
 }
 
 .bg-electric {
-    background-color: rgb(209, 209, 6);
+    background-color: #F7D02C;
 }
 
 .bg-ground {
-    background-color: rgb(191, 149, 97);
+    background-color: #E2BF65;
 }
 
 .bg-fairy {
-    background-color: rgb(255, 156, 243);
+    background-color: #D685AD;
 }
 
 .bg-fighting {
-    background-color: rgb(150, 83, 83);
+    background-color: #C22E28;
 }
 
 .bg-psychic {
-    background-color: rgb(192, 224, 86);
+    background-color: #F95587;
 }
 
 .bg-rock {
-    background-color: rgb(163, 163, 163);
+    background-color: #B6A136;
 }
 
 .bg-ghost {
-    background-color: rgb(190, 190, 143);
+    background-color: #735797;
 }
 
 .bg-dark {
-    background-color: rgb(0, 0, 0);
+    background-color: #705746;
 }
 
 .bg-steel {
-    background-color: rgb(181, 181, 181);
+    background-color: #B7B7CE;
 }
 
 .bg-ice {
-    background-color: rgb(96, 170, 255);
+    background-color: #96D9D6;
 }
 
 .bg-dragon {
-    background-color: rgb(66, 25, 25);
+    background-color: #6F35FC;
 }
 
 .bg-flying {
-    background-color: rgb(48, 158, 255);
+    background-color: #A98FF3;
 }

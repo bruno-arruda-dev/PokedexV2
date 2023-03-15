@@ -63,7 +63,9 @@ function PokemonCard({ pokemon }) {
                     <button onClick={handleClickHeartButton}>{heart}</button>
                     <div className={`pokemonCard-container bg-${mainType}`}>
                         <h3 className='pokemon-title'>{name}</h3>
-                        <p className='pokemon-id'>{id}</p>
+                        <div className='idContainer'>
+                            <p className='pokemon-id'>{id}</p>
+                        </div>
                         <div className='pokemonCard-types'>
                             <div className={`type st ${mainType}`} st>{mainType}</div>
                             {secType && <div className={`type nd ${secType}`}>{secType}</div>}
