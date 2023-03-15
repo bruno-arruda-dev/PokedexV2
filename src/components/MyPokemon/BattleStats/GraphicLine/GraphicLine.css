@@ -1,23 +1,26 @@
 .graphicLine {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 80%;
+    justify-content: flex-start;
+    width: 310px;
     font-weight: bold;
     color: var(--detail-text-color);
 }
 
 .content {
-    text-align: right;
-    width: 2.6rem;
+    width: 60px;
+    text-align: left;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 .lineStat-container{
+    width: 255px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.205);
 }
 
 .lineStat{
