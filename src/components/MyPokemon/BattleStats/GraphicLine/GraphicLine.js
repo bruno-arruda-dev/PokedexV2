@@ -13,7 +13,7 @@ function GraphicLine(props) {
 
   return (
     <div className='graphicLine'>
-            <div className='content'><p>{content}</p></div>
+        <div className='content'><p>{content}</p></div>
         <div className='lineStat-container'>
             <div className={`lineStat ${content}`}></div>
         </div>
@@ -21,4 +21,4 @@ function GraphicLine(props) {
   )
 }
 
-export default GraphicLine
+export default GraphicLine;
