@@ -6,22 +6,18 @@ function NormalStats() {
 
     const { height, weight } = useContext(GetPokemonDataContext);
 
-  return (
-    <div className='normalStats'>
-        <div className='heightStat'>
-            <div className='line'>
-                <p>{height}</p>
+    return (
+        <div className='normalStats'>
+            <div className='heightStat'>
+                <div className='heightStat-img height'></div>
+                    <p>{height}</p>
             </div>
-            <p>Altura</p>
-        </div>
-        <div className='weightStat'>
-        <div className='line'>
+            <div className='weightStat'>
+                <div className='heightStat-img weight'></div>
                 <p>{weight}</p>
             </div>
-            <p>Peso</p>
         </div>
-    </div>
-  )
+    )
 }
 
 export default NormalStats

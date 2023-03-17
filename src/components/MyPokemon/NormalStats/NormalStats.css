@@ -2,19 +2,42 @@
     display: flex;
     color: var(--detail-text-color);
     font-weight: bold;
-    margin-top: 1rem 0;
+    margin: 1% 0;
 }
 
 .heightStat {
-    margin-right: 5%;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    font-size: var(--text-default-size);
 }
 
 .weightStat {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
 }
 
 .line {
     width: 80px;
     border-bottom: 3px solid var(--detail-text-color);
+}
+
+.heightStat-img {
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 5px
+}
+
+.height {
+    background-image: url(../../../../public//images/height.png);
+}
+
+.weight {
+    background-image: url(../../../../public//images/weight.png);
 }
