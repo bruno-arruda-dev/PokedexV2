@@ -64,7 +64,7 @@ function PokemonCard({ pokemon }) {
                     <div className={`pokemonCard-container bg-${mainType}`}>
                         <h3 className='pokemon-title'>{name}</h3>
                         <div className='idContainer'>
-                            <p className='pokemon-id'>{id}</p>
+                            <p className='pokemon-id'>{id.toString().padStart(4, "0")}</p>
                         </div>
                         <div className='pokemonCard-types'>
                             <div className={`type st ${mainType}`} st>{mainType}</div>
