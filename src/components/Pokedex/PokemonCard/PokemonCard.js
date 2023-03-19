@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, memo } from 'react';
 import './PokemonCard.css';
 import './CardMainType.css';
 import './CardAllTypes.css';
@@ -77,4 +77,4 @@ function PokemonCard({ pokemon }) {
     )
 }
 
-export default PokemonCard;
+export default memo(PokemonCard);

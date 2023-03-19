@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, memo } from 'react';
 import { GetPokemonsContext } from '../Context/GetPokemonsContext';
 import IsLoading from '../IsLoading/IsLoading';
 import './Pokedex.css';
@@ -22,4 +22,4 @@ function Pokedex() {
   )
 }
 
-export default Pokedex;
+export default memo(Pokedex);

@@ -5,7 +5,8 @@ export const PaginationContext = createContext();
 export const PaginationProvider = ({ children }) => {
     const [offset, setOffset] = useState(0); //Deslocamento
     const [currentPage, setCurrentPage] = useState(1); //Página atual
-    const limit = 50; //Máximo de pokemons por página
+    const limit = 20; //Máximo de pokemons por página
+    const [scrollLimit, setScrollLimit] = useState(limit);
     const maxPokemons = 1281; //Máximo de pokemons na API
     const maxPages = Math.ceil(maxPokemons / limit); //Máximo de páginas
 
@@ -29,9 +30,15 @@ export const PaginationProvider = ({ children }) => {
         }
     }
 
+    const infiniteScrollHandle = () => {
+        setScrollLimit((scrollLimitInsideState) => scrollLimitInsideState + limit);
+        console.log(scrollLimit);
+        setCurrentPage((currentPageInsideState) => currentPageInsideState + 1);
+    }
+
     return (
         <PaginationContext.Provider value={{
-            GoBack, GoFoward, offset, currentPage, maxPages, limit
+            GoBack, GoFoward, infiniteScrollHandle, offset, currentPage, maxPages, limit, scrollLimit
         }}>{ children }</PaginationContext.Provider>
     )
 }
