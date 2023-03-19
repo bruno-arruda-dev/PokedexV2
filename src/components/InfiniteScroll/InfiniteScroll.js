@@ -10,7 +10,7 @@ function InfiniteScroll() {
             if(entries.some((entry) => entry.isIntersecting)) {
                 console.log(`Pagina atual ${currentPage} / ${maxPages}`);
                 console.log(`Limite por página: ${scrollLimit}, iniciando em: ${offset}`);
-                infiniteScrollHandle()
+                infiniteScrollHandle();
             }
         });
 

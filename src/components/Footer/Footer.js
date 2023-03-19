@@ -1,11 +1,12 @@
 import React from 'react';
 import './Footer.css';
 import Pagination from '../Pagination/Pagination';
+import InfiniteScroll from '../InfiniteScroll/InfiniteScroll';
 
 function Footer() {
   return (
     <footer className='footer'>
-      <Pagination />
+      <InfiniteScroll />
       <div className='socialMedias'>
             <a href="https://github.com/BrunoArrm/PokedexV2" target="_blank">
                 <div className='socialMedia github'></div>
