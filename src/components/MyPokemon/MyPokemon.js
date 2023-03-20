@@ -8,7 +8,7 @@ import { FavoriteContext } from '../Context/FavoriteContext';
 
 function MyPokemon() {
   const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
-  const { pokemon, mainImg, secImg, mainType, hide, erro, setHide } = useContext(GetPokemonDataContext);
+  const { pokemon, mainImg, id, secImg, mainType, hide, erro, setHide } = useContext(GetPokemonDataContext);
   // const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
   const { favorite, favoritesList } = useContext(FavoriteContext);
   const [heart, setHeart] = useState("💛");
