@@ -1,4 +1,4 @@
-import React, { useContext, memo } from 'react';
+import React, { useContext } from 'react';
 import { GetPokemonsContext } from '../Context/GetPokemonsContext';
 import IsLoading from '../IsLoading/IsLoading';
 import './Pokedex.css';
@@ -10,7 +10,8 @@ function Pokedex() {
 
   return (
     <div className='pokedex'>
-      {isLoading ? (
+      {
+      isLoading ? (
         <IsLoading />
       ) : (
         pokemons.map((pokemon) => (
@@ -22,4 +23,4 @@ function Pokedex() {
   )
 }
 
-export default memo(Pokedex);
+export default Pokedex;
