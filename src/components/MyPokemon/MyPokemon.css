@@ -11,9 +11,8 @@
     margin: auto;
     width: 80%;
     height: 60%;
-    /* max-width: 1000px;
-    max-height: 800px; */
     z-index: 1000;
+    box-shadow: 0 0 1px 1px var(--main-text-color);
 }
 
 .erro-message-img {
