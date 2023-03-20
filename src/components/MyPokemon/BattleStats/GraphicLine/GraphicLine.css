@@ -21,7 +21,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    border-radius: 50px;
     background-color: var(--opacity-text-color);
 }
 
@@ -36,27 +35,3 @@
     width: 2rem;
     font-weight: bold;
 }
-
-/* .hp {
-    background-color: rgb(0, 155, 18);
-}
-
-.atk {
-    background-color: rgb(187, 0, 0);
-}
-
-.xatk {
-    background-color: red;
-}
-
-.def {
-    background-color: rgb(7, 0, 137);
-}
-
-.xdef {
-    background-color: rgb(0, 17, 255);
-}
-
-.spd {
-    background-color: rgb(255, 230, 0);
-} */
