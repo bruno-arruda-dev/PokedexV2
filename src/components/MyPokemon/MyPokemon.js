@@ -8,7 +8,7 @@ import { FavoriteContext } from '../Context/FavoriteContext';
 
 function MyPokemon() {
   const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
-  const { pokemon, mainImg, secImg, mainType, hide, erro } = useContext(GetPokemonDataContext);
+  const { pokemon, mainImg, secImg, mainType, hide, erro, setHide } = useContext(GetPokemonDataContext);
   // const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
   const { favorite, favoritesList } = useContext(FavoriteContext);
   const [heart, setHeart] = useState("💛");
@@ -26,6 +26,10 @@ function MyPokemon() {
     myPokemon.scrollIntoView({ behavior: 'smooth', block: "start" });
   }
 
+  const closerModal = () =>{
+    setHide(true);
+  }
+
   return (
     <>
       {
@@ -40,6 +44,7 @@ function MyPokemon() {
           :
           !hide && (
             <div className={`myPokemon bg-${mainType}`} id="myPokemon">
+              <div class="xclose" onClick={closerModal}>X</div>
               <p className="myPokemon-title">{pokemon}</p>
               <button onClick={handleClickHeartButton}>{heart}</button>
               <div className="pokemonStats">

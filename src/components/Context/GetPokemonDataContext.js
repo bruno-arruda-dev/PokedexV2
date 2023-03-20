@@ -69,16 +69,10 @@ export const GetPokemonDataProvider = ({ children }) => {
             }
             setHide(false);
 
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            // const myPokemon = document.getElementById('myPokemon');
-            // setTimeout(() => {
-            //     myPokemon.scrollIntoView({ behavior: 'smooth', block: "start" });
-            // }, 5000); // Espera 500ms antes de chamar scrollIntoView
         }
     };
 
-    return <GetPokemonDataContext.Provider value={{ updatePokemonName, pokemon, mainImg, secImg, id, height, weight, hp, atk, xAtk, def, xDef, spd, mainType, hide, erro }}>
+    return <GetPokemonDataContext.Provider value={{ updatePokemonName, pokemon, mainImg, secImg, id, height, weight, hp, atk, xAtk, def, xDef, spd, mainType, hide, erro, setHide }}>
         {children}
     </GetPokemonDataContext.Provider>;
 }
