@@ -11,13 +11,9 @@ function Pokedex() {
   return (
     <div className='pokedex'>
       {
-      isLoading ? (
-        <IsLoading />
-      ) : (
         pokemons.map((pokemon) => (
           <PokemonCard key={pokemon.name} pokemon={pokemon.name} />
         ))
-      )
       }
     </div>
   )
