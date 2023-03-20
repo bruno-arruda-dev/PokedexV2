@@ -4,10 +4,15 @@
     justify-content: center;
     width: 99%;
     height: 60vh;
-    margin: 0 auto;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
     position: fixed;
-    top: 200px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-width: 80%;
     z-index: 1000;
     padding: 1rem 0;
     font-size: 16px;
@@ -28,7 +33,7 @@
 }
 
 .myPokemon-title {
-    font-size: 8vw;
+    font-size: 5vw;
     text-transform: uppercase;
     font-family: 'Climate Crisis', cursive;
     color: var(--opacity-text-color);
@@ -54,8 +59,8 @@
     border: none;
     cursor: pointer;
     position: absolute;
-    top: 1rem;
-    left: 1rem;
+    bottom: 1rem;
+    right: 1rem;
 }
 
 .pokemonStats {
@@ -132,7 +137,7 @@
     }
 
     .myPokemon-img {
-        width: 99%;
+        width: 50%;
     }
 
     .pokemonStats {
