@@ -17,6 +17,7 @@
     position: absolute;
     bottom: 1.5rem;
     right: 0.3rem;
+    z-index: 3;
 }
 
 .pokemonCard:hover {
