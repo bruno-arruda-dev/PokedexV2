@@ -9,7 +9,7 @@ import { FavoriteContext } from '../Context/FavoriteContext';
 function MyPokemon() {
   const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
   const { pokemon, mainImg, id, secImg, mainType, hide, erro, setHide } = useContext(GetPokemonDataContext);
-  // const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
+  const [ isOpen, setIsOpen ] = useState("");
   const { favorite, favoritesList } = useContext(FavoriteContext);
   const [heart, setHeart] = useState("💛");
 
@@ -19,6 +19,9 @@ function MyPokemon() {
 
   useEffect(()=>{
     localStorage.getItem(pokemon) ? setHeart("❤️") : setHeart("💛");
+    if (isOpen === "modalClose") {
+      setIsOpen("modalOpen");
+    }
   }, [pokemon, favoritesList]);
 
   const goTo = () => {
@@ -26,9 +29,14 @@ function MyPokemon() {
     myPokemon.scrollIntoView({ behavior: 'smooth', block: "start" });
   }
 
-  const closerModal = () =>{
-    setHide(true);
-  }
+  const closerModal = () => {
+    if (isOpen === "modalOpen") {
+      setIsOpen("modalClose");
+    }
+    setTimeout(() => {
+      setHide(true);
+    }, 200); // atraso de .2 segundos
+  };
 
   return (
     <>
@@ -43,7 +51,7 @@ function MyPokemon() {
           </div>
           :
           !hide && (
-            <div className={`myPokemon bg-${mainType}`} id="myPokemon">
+            <div className={`myPokemon bg-${mainType} ${isOpen}`} id="myPokemon">
               <div class="xclose" onClick={closerModal}>X</div>
               <p className="myPokemon-title">{pokemon}</p>
               <button onClick={handleClickHeartButton}>{heart}</button>
