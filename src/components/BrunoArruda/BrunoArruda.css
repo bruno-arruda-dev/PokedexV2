@@ -1,0 +1,56 @@
+.brunoArruda {
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: rgb(43, 0, 0);
+    z-index: 2000;
+}
+
+.closed {
+    width: 95px;
+    height: 30px;
+    border-radius: 0 0 85% 85% / 30%;
+    animation: startClosed .1s ease-in-out;
+}
+
+@keyframes startClosed {
+    0% {
+        width: 100%;
+        height: 50vh;
+    }
+
+    100% {
+        width: 95px;
+        height: 30px;
+    }
+}
+
+.open {
+    width: 100%;
+    height: 50vh;
+    border-radius: 0 0 85% 85% / 30%;
+    animation: startOpen .1s ease-in-out;
+}
+
+@keyframes startOpen {
+    0% {
+        width: 95px;
+        height: 30px;
+    }
+    100% {
+        width: 100%;
+        height: 50vh;
+    }
+
+}
+
+.dot {
+    color: rgb(255, 0, 0);
+}
+
+.me {
+    color: rgb(0, 153, 255);
+}

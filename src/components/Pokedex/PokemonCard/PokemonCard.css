@@ -24,6 +24,15 @@
     transform: scale(1.05);
 }
 
+.pokemonCard:focus {
+    animation: toutch .2s ease-in-out;
+}
+
+@keyframes toutch {
+    0% { background-size: 40% }
+    100% {background-size: 80%;}
+  }
+
 .pokemonCard-container {
     display: flex;
     flex-direction: column;
