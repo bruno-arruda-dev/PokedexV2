@@ -7,8 +7,8 @@ import { FavoriteProvider } from './components/Context/FavoriteContext';
 import Header from './components/Header/Header';
 import MyPokemon from './components/MyPokemon/MyPokemon';
 import Pokedex from './components/Pokedex/Pokedex';
-import Footer from './components/Footer/Footer';
 import FavoritesContainer from './components/FavoritesContainer/FavoritesContainer';
+import InfiniteScroll from './components/InfiniteScroll/InfiniteScroll';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <MyPokemon />
             <FavoritesContainer />
             <Pokedex />
-            <Footer />
+            <InfiniteScroll />
           </FavoriteProvider>
         </GetPokemonDataProvider>
       </GetPokemonsProvider>
