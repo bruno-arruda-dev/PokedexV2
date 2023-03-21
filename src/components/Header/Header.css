@@ -9,6 +9,13 @@
     position: relative;
 }
 
+@media (max-width: 620px) {
+    .header{
+        padding-top: 40px;
+        height: fit-content;
+    }
+}
+
 @media (max-width: 500px) {
     .header {
         justify-content: center;

@@ -9,17 +9,31 @@
     z-index: 2000;
 }
 
+.dot {
+    color: rgb(255, 0, 0);
+}
+
+.me {
+    color: rgb(0, 153, 255);
+}
+
+.brunoArruda--button {
+    cursor: pointer;
+}
+
 .closed {
     width: 95px;
     height: 30px;
     border-radius: 0 0 85% 85% / 30%;
     animation: startClosed .1s ease-in-out;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
 @keyframes startClosed {
     0% {
         width: 100%;
-        height: 50vh;
+        height: 70vh;
     }
 
     100% {
@@ -30,9 +44,10 @@
 
 .open {
     width: 100%;
-    height: 50vh;
+    height: 90vh;
     border-radius: 0 0 85% 85% / 30%;
     animation: startOpen .1s ease-in-out;
+    padding-bottom: 50px;
 }
 
 @keyframes startOpen {
@@ -47,10 +62,69 @@
 
 }
 
-.dot {
-    color: rgb(255, 0, 0);
+
+.brunoArruda__content--closed {
+    display: none;
 }
 
-.me {
-    color: rgb(0, 153, 255);
+.brunoArruda__content--open{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.motivacional__container {
+    width: 90%;
+    text-align: justify;
+    height: fit-content;
+}
+
+.motivacional {
+    font-size: 1.5rem;
+    animation: motivacionalShow 3s ease-in-out;
+    font-family: 'Recursive', sans-serif;
+    font-style: italic;
+}
+
+@keyframes motivacionalShow {
+    0% {opacity: 0};
+    100% {opacity: 0.1};
+}
+
+.socialMedias {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.socialMedia {
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    height: 50px;
+}
+
+.github {
+    background-image: url('../../../public/images/github.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 50px;
+}
+
+.linkedin {
+    background-image: url('../../../public/images/linkedin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.sign {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
 }
