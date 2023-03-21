@@ -100,12 +100,22 @@
 
 .myPokemon-img {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 0;
     width: 50%;
-    height: 80%;
+    height: 70%;
     cursor: pointer;
+    position: relative;
+}
+
+.myPokemon-id {
+    font-size: 3rem;
+    position: absolute;
+    bottom: -50px;
+    font-family: 'Climate Crisis', cursive;
+    color: var(--opacity-text-color);
 }
 
 /* Aplica-se este estilo quando as imagens do pokemon não são encontradas */
@@ -160,6 +170,16 @@
 
     .myPokemon-img {
         width: 50%;
+        margin-bottom: 20px;
+    }
+
+    .myPokemon-id {
+        font-size: 1rem;
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+        font-family: 'Climate Crisis', cursive;
+        color: var(--main-text-color);
     }
 
     .pokemonStats {

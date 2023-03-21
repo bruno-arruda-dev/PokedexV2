@@ -64,6 +64,7 @@ function MyPokemon() {
                 <div className={mainImg ? "myPokemon-img" : (secImg ? "myPokemon-img" : "not-Found-Img-MyPokemon")}>
                   <img  src={mainImg ? mainImg : (secImg ? secImg : logo)} //Verifica se a imagem principal ou a secundária foram encontradas. Se não aplica-se a LOGO padrão da API
                         alt={pokemon} onClick={goTo} />
+                  <p className='myPokemon-id'>#{id.toString().padStart(3, "0")}</p>
                 </div>
               </div>
             </div>
