@@ -72,7 +72,7 @@ export const GetPokemonDataProvider = ({ children }) => {
         }
     };
 
-    return <GetPokemonDataContext.Provider value={{ updatePokemonName, pokemon, mainImg, secImg, id, height, weight, hp, atk, xAtk, def, xDef, spd, mainType, hide, erro, setHide }}>
+    return <GetPokemonDataContext.Provider value={{ updatePokemonName, pokemon, mainImg, secImg, id, height, weight, hp, atk, xAtk, def, xDef, spd, mainType, hide, setErro, erro, setHide }}>
         {children}
     </GetPokemonDataContext.Provider>;
 }

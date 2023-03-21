@@ -8,7 +8,7 @@ import { FavoriteContext } from '../Context/FavoriteContext';
 
 function MyPokemon() {
   const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
-  const { pokemon, mainImg, id, secImg, mainType, hide, erro, setHide } = useContext(GetPokemonDataContext);
+  const { pokemon, mainImg, id, secImg, mainType, hide, setErro, erro, setHide } = useContext(GetPokemonDataContext);
   const [ isOpen, setIsOpen ] = useState("");
   const { favorite, favoritesList } = useContext(FavoriteContext);
   const [heart, setHeart] = useState("💛");
@@ -30,20 +30,21 @@ function MyPokemon() {
   }
 
   const closerModal = () => {
-    if (isOpen === "modalOpen") {
-      setIsOpen("modalClose");
-    }
-    setTimeout(() => {
       setHide(true);
-    }, 200); // atraso de .2 segundos
   };
+
+  const closerErrorModal = () => {
+    setHide(true);
+    setErro("");
+};
 
   return (
     <>
       {
         erro === "Pokemon não encontrado"
           ?
-          <div className={`myPokemon mainType-normal`} style={{ height: "fit-content" }}>
+          <div className={`notFoundError bg-normal`}>
+            <div class="xclose" onClick={closerErrorModal}>X</div>
             <div className='erro-message-img'></div>
             <p>
               Pokemon "{pokemon}" não foi encontrado!
@@ -51,7 +52,7 @@ function MyPokemon() {
           </div>
           :
           !hide && (
-            <div className={`myPokemon bg-${mainType} ${isOpen}`} id="myPokemon">
+            <div className={`myPokemon bg-${mainType}`} id="myPokemon">
               <div class="xclose" onClick={closerModal}>X</div>
               <p className="myPokemon-title">{pokemon}</p>
               <button onClick={handleClickHeartButton}>{heart}</button>
