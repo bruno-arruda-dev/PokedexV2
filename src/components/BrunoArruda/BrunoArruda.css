@@ -48,6 +48,7 @@
     border-radius: 0 0 85% 85% / 30%;
     animation: startOpen .1s ease-in-out;
     padding-bottom: 50px;
+    position: fixed;
 }
 
 @keyframes startOpen {
