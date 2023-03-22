@@ -25,7 +25,12 @@ A linguagem Javascript foi muito utilizada e eu tive a oportunidade de praticar 
 https://brunoarrm.github.io/PokedexV2/
 ### Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+  <img width="400px" src="src/assets/to_readme/desktop.png">
+  <img width="400px" src="src/assets/to_readme/mobile1.png">
+  <img width="400px" src="src/assets/to_readme/mobile2.png">
+  <img width="400px" src="src/assets/to_readme/mobile3.png">
+  <img width="400px" src="src/assets/to_readme/card.png">
 
 
 ### Feedback
