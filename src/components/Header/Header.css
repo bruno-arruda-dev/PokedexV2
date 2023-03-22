@@ -5,7 +5,8 @@
     flex-wrap: wrap;
     background-color: var(--main-detail-color);
     padding: 10px;
-    height: 20vh;
+    height: fit-content;
+    min-height: 20vh;
     position: relative;
 }
 

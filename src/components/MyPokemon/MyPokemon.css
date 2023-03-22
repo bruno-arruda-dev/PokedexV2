@@ -113,7 +113,7 @@
 .myPokemon-id {
     font-size: 3rem;
     position: absolute;
-    bottom: -50px;
+    bottom: -25%;
     font-family: 'Climate Crisis', cursive;
     color: var(--opacity-text-color);
 }
@@ -151,6 +151,12 @@
     justify-content: flex-end;
     width: 50%;
     height: 100%;
+}
+
+@media (max-height: 480px) {
+    .myPokemon-id {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 650px) {
