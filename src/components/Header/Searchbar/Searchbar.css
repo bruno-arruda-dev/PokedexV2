@@ -2,6 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 2%;
+    width: 50%;
 }
 
 .searchbar-input,
@@ -13,6 +15,7 @@
 
 .searchbar-input {
     padding-left: 7px;
+    width: 90%;
     border-radius:  var(--main-radius)
                     0
                     0
@@ -54,6 +57,12 @@
   @keyframes toutch {
     0% { background-size: 40% }
     100% {background-size: 80%;}
+  }
+
+  @media (max-width: 700px) {
+    .searchbar {
+      width: 80%;
+    }
   }
 
   @media (max-width: 500px) {
