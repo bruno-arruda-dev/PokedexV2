@@ -65,10 +65,16 @@
 }
 
 .xclose{
+    width: 20px;
+    height: 20px;
     color: var(--main-text-color);
     position: absolute;
     top: 20px;
     right: 20px;
+    background-image: url('../../../public/images/close.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .xclose:hover{

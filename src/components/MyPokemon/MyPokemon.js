@@ -53,7 +53,7 @@ function MyPokemon() {
           :
           !hide && (
             <div className={`myPokemon bg-${mainType}`} id="myPokemon">
-              <div class="xclose" onClick={closerModal}>X</div>
+              <div class="xclose" onClick={closerModal}></div>
               <p className="myPokemon-title">{pokemon}</p>
               <button onClick={handleClickHeartButton}>{heart}</button>
               <div className="pokemonStats">
