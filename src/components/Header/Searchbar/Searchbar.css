@@ -29,7 +29,7 @@
     background-image: url('../../../../public/images/search.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 50%;
     border-radius:  0 
                     var(--main-radius)
                     var(--main-radius)

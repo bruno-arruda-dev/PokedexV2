@@ -57,7 +57,6 @@
 .myPokemon-title {
     font-size: 5vw;
     text-transform: uppercase;
-    font-family: 'Climate Crisis', cursive;
     color: var(--opacity-text-color);
     position: absolute;
     top: 0;
@@ -114,7 +113,6 @@
     font-size: 3rem;
     position: absolute;
     bottom: -25%;
-    font-family: 'Climate Crisis', cursive;
     color: var(--opacity-text-color);
 }
 
