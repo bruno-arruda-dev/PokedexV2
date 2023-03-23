@@ -60,7 +60,7 @@ function MyPokemon() {
               </div>
               <div className='myPokemon-content-container'>
                 <div className='content-container'>
-                  <p className='myPokemon-id'>{id.toString().padStart(3, "0")}</p>
+                  <p className='myPokemon-id'>{id.toString().padStart(5, "0")}</p>
                   <BattleStats />
                   <NormalStats />
                 </div>

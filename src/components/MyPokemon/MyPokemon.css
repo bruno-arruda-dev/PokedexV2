@@ -15,7 +15,7 @@
     z-index: 1000;
     box-shadow: 0 0 10px 1px var(--main-text-color);
     animation: modalGrow .3s ease-in-out;
-    padding: 1.5%;
+    overflow: hidden;
 }
 
 .myPokemon-title-container {
@@ -32,7 +32,14 @@
 
 .myPokemon-id {
     color: var(--main-text-color);
-    font-size: 3rem;
+    font-size: 10rem;
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    color: rgba(255, 255, 255, 0.150);
+    font-style: italic;
+    font-weight: 900;
+    z-index: -1;
 }
 
 .myPokemon-content-container {
@@ -48,6 +55,7 @@
     justify-content: space-evenly;
     width: 50%;
     height: 100%;
+    position: relative;
 }
 
 .image-container {
@@ -67,21 +75,23 @@
     border: none;
     cursor: pointer;
     position: absolute;
-    bottom: 1rem;
-    right: 1rem;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2000;
 }
 
 .xclose{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     color: var(--main-text-color);
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
     background-image: url('../../../public/images/close.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 2000;
 }
 
 .xclose:hover{
@@ -91,6 +101,10 @@
 @media (max-width: 650px) {
     .myPokemon {
         height: 80%;
+    }
+
+    .myPokemon-id {
+        left: -10%;
     }
 
     .myPokemon-title-container {
@@ -112,6 +126,16 @@
 
     .myPokemon {
         height: 90%;
+    }
+
+}
+
+@media (max-width: 590px) {
+
+    .myPokemon-id {
+        font-size: 6rem;
+        bottom: -60px;
+        left: -20px;
     }
 
 }
