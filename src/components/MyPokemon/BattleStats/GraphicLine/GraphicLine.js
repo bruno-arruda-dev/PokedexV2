@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import './GraphicLine.css';
 
 function GraphicLine(props) {
-    const {content, value} = props;
+    const {content, value, numericalValue} = props;
 
     useEffect(() => {
         const lineStat = document.querySelector(`.lineStat.${content}`);
-        lineStat.style.width = `${value}px`;
+        lineStat.style.width = `${value}%`;
       }, [content, value]);
     
 
@@ -16,6 +16,7 @@ function GraphicLine(props) {
         <div className='lineStat-container'>
             <div className={`lineStat ${content}`}></div>
         </div>
+        <div className='numericalValue'>{numericalValue}</div>
     </div>
   )
 }

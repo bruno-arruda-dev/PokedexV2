@@ -9,12 +9,12 @@ function BattleStats() {
 
   return (
     <div className='battleStats'>
-        <GraphicLine content="hp" value={hp}/>
-        <GraphicLine content="atk" value={atk}/>
-        <GraphicLine content="xatk" value={xAtk}/>
-        <GraphicLine content="def" value={def}/>
-        <GraphicLine content="xdef" value={xDef}/>
-        <GraphicLine content="spd" value={spd}/>
+        <GraphicLine content="hp" numericalValue={hp} value={( hp / 250 ) * 100} />
+        <GraphicLine content="atk" numericalValue={atk} value={( atk / 250 ) * 100} />
+        <GraphicLine content="xatk" numericalValue={xAtk} value={(xAtk / 250) * 100} />
+        <GraphicLine content="def" numericalValue={def} value={(def / 250) * 100} />
+        <GraphicLine content="xdef" numericalValue={xDef} value={(xDef / 250) * 100} />
+        <GraphicLine content="spd" numericalValue={spd} value={(spd / 250 ) * 100} />
     </div>
   )
 }

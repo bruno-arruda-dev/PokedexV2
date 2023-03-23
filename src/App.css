@@ -3,7 +3,7 @@
   --main-radius: 10px;
   --main-text-color: rgb(41, 39, 39);
   --opacity-text-color: rgba(48, 48, 48, 0.7);
-  --text-default-size: 18px;
+  --text-default-size: 1rem;
 }
 
 * {

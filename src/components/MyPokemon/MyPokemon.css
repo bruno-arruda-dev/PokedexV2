@@ -1,5 +1,6 @@
 .myPokemon {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
@@ -14,54 +15,60 @@
     z-index: 1000;
     box-shadow: 0 0 10px 1px var(--main-text-color);
     animation: modalGrow .3s ease-in-out;
+    padding: 1.5%;
 }
 
-@keyframes modalGrow {
-    0% {transform: scale(0);};
-    100% {transform: scale(1)};
-}
-
-.notFoundError {
+.myPokemon-title-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    padding: 50px;
-    width: 80%;
-    height: 100px;
-    z-index: 1000;
-    box-shadow: 0 0 1px 1px var(--main-text-color);
-    animation: modalGrow .3s ease-in-out;
-}
-
-.erro-message-img {
-    width: 20px;
-    height: 20px;
-    background-image: url('../../../public/images/warning.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-right: 1rem;
-}
-
-.hideComponent {
-    display: none;
-}
-
-.myPokemon-title {
-    font-size: 5vw;
+    width: 100%;
+    height: 15%;
     text-transform: uppercase;
     color: var(--opacity-text-color);
+    text-align: center;
+    font-size: 2rem;
+}
+
+.myPokemon-id {
+    color: var(--opacity-text-color);
+    font-size: 3rem;
+}
+
+.myPokemon-content-container {
+    height: 85%;
+    width: 100%;
+    display: flex;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 100%;
+}
+
+.image-container {
+    width: 50%;
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    max-width: auto;
+    max-height: auto;
+}
+
+.myPokemon button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     position: absolute;
-    top: 0;
-    left: 10%;
-    transform: translateX(-10%);
+    bottom: 1rem;
+    right: 1rem;
 }
 
 .xclose{
@@ -81,118 +88,25 @@
     cursor: pointer;
 }
 
-.myPokemon button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-}
-
-.pokemonStats {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    height: 100%;
-    width: 100%;
-}
-
-.pokemonStats-detailContainer {
-    width: 33.33%;
-}
-
-.myPokemon-img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 0;
-    width: 50%;
-    height: 70%;
-    cursor: pointer;
-    position: relative;
-}
-
-.myPokemon-id {
-    font-size: 3rem;
-    position: absolute;
-    bottom: -25%;
-    color: var(--opacity-text-color);
-}
-
-/* Aplica-se este estilo quando as imagens do pokemon não são encontradas */
-.not-Found-Img-MyPokemon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 0;
-    cursor: pointer;
-}
-
-.not-Found-Img {
-    max-width: 100px;
-    max-height: 100px;
-    width: auto;
-    height: auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.myPokemon-img img {
-    width: 100%;
-    height: 100%;
-    max-width: auto;
-    max-height: auto;
-}
-
-.myPokemon-battleStats {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    width: 50%;
-    height: 100%;
-}
-
-@media (max-height: 480px) {
-    .myPokemon-id {
-        font-size: 2rem;
-    }
-}
-
 @media (max-width: 650px) {
     .myPokemon {
-        height: fit-content;
-        padding-top: 20%;
+        height: 80%;
     }
 
-    .myPokemon-title {
-        left: 50%;
-        transform: translateX(-50%);
+    .myPokemon-title-container {
+        height: 10%;
     }
 
-    .myPokemon-battleStats {
-        width: 99%;
+    .myPokemon-content-container {
+        flex-direction: column-reverse;
     }
 
-    .myPokemon-img {
-        width: 50%;
-        margin-bottom: 20px;
+    .content-container, .image-container {
+        width: 100%;
+        height: 45%;
     }
 
-    .myPokemon-id {
-        font-size: 1rem;
-        position: absolute;
-        bottom: -20px;
-        left: -20px;
-        font-family: 'Climate Crisis', cursive;
-        color: var(--main-text-color);
-    }
-
-    .pokemonStats {
-        flex-direction: column;
+    .image-container img {
+        background-color: red;
     }
 }

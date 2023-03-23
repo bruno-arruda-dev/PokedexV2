@@ -9,7 +9,7 @@ import { FavoriteContext } from '../Context/FavoriteContext';
 function MyPokemon() {
   const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
   const { pokemon, mainImg, id, secImg, mainType, secType, hide, setErro, erro, setHide } = useContext(GetPokemonDataContext);
-  const [ isOpen, setIsOpen ] = useState("");
+  const [isOpen, setIsOpen] = useState("");
   const { favorite, favoritesList } = useContext(FavoriteContext);
   const [heart, setHeart] = useState("💛");
 
@@ -17,7 +17,7 @@ function MyPokemon() {
     favorite(pokemon);
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     localStorage.getItem(pokemon) ? setHeart("❤️") : setHeart("💛");
     if (isOpen === "modalClose") {
       setIsOpen("modalOpen");
@@ -30,13 +30,13 @@ function MyPokemon() {
   }
 
   const closerModal = () => {
-      setHide(true);
+    setHide(true);
   };
 
   const closerErrorModal = () => {
     setHide(true);
     setErro("");
-};
+  };
 
   return (
     <>
@@ -52,20 +52,24 @@ function MyPokemon() {
           </div>
           :
           !hide && (
-            <div className={`myPokemon bg-${mainType}`} id="myPokemon">
-              <div class="xclose" onClick={closerModal}></div>
-              <p className="myPokemon-title">{pokemon}</p>
+            <div className={`myPokemon bg-${mainType}`}>
               <button onClick={handleClickHeartButton}>{heart}</button>
-              <div className="pokemonStats">
-                <div className="myPokemon-battleStats">
+              <div class="xclose" onClick={closerModal}></div>
+              <div className='myPokemon-title-container'>
+                <h2 className="myPokemon-title">{pokemon}</h2>
+              </div>
+              <div className='myPokemon-content-container'>
+                <div className='content-container'>
+                  <p className='myPokemon-id'>{id.toString().padStart(3, "0")}</p>
                   <BattleStats />
                   <NormalStats />
                 </div>
-                <div className={mainImg ? "myPokemon-img" : (secImg ? "myPokemon-img" : "not-Found-Img-MyPokemon")}>
-                  <img  src={mainImg ? mainImg : (secImg ? secImg : logo)} //Verifica se a imagem principal ou a secundária foram encontradas. Se não aplica-se a LOGO padrão da API
-                        alt={pokemon} onClick={goTo} />
-                  <p className='myPokemon-id'>#{id.toString().padStart(3, "0")}</p>
+
+                <div className='image-container'>
+                  <img src={mainImg ? mainImg : (secImg ? secImg : logo)} //Verifica se a imagem principal ou a secundária foram encontradas. Se não aplica-se a LOGO padrão da API
+                    alt={pokemon} onClick={goTo} />
                 </div>
+
               </div>
             </div>
           )}
