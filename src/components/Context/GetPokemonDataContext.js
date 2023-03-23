@@ -18,6 +18,7 @@ export const GetPokemonDataProvider = ({ children }) => {
     const [xDef, setXDef] = useState("");
     const [spd, setSpd] = useState("");
     const [mainType, setMainType] = useState("normal");
+    const [secType, setSecType] = useState("");
     const [hide, setHide] = useState(true);
     const [erro, setErro] = useState("");
 
@@ -66,13 +67,14 @@ export const GetPokemonDataProvider = ({ children }) => {
             // Recebe o tipo principal do pokemon
             if (currentPokemon.types && currentPokemon.types.length > 0) {
                 setMainType(currentPokemon.types[0].type.name);
+                setSecType(currentPokemon.types[1]?.type.name);
             }
             setHide(false);
 
         }
     };
 
-    return <GetPokemonDataContext.Provider value={{ updatePokemonName, pokemon, mainImg, secImg, id, height, weight, hp, atk, xAtk, def, xDef, spd, mainType, hide, setErro, erro, setHide }}>
+    return <GetPokemonDataContext.Provider value={{ updatePokemonName, pokemon, mainImg, secImg, id, height, weight, hp, atk, xAtk, def, xDef, spd, mainType, secType, hide, setErro, erro, setHide }}>
         {children}
     </GetPokemonDataContext.Provider>;
 }

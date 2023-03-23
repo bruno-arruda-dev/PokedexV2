@@ -8,7 +8,7 @@ import { FavoriteContext } from '../Context/FavoriteContext';
 
 function MyPokemon() {
   const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
-  const { pokemon, mainImg, id, secImg, mainType, hide, setErro, erro, setHide } = useContext(GetPokemonDataContext);
+  const { pokemon, mainImg, id, secImg, mainType, secType, hide, setErro, erro, setHide } = useContext(GetPokemonDataContext);
   const [ isOpen, setIsOpen ] = useState("");
   const { favorite, favoritesList } = useContext(FavoriteContext);
   const [heart, setHeart] = useState("💛");
@@ -44,7 +44,7 @@ function MyPokemon() {
         erro === "Pokemon não encontrado"
           ?
           <div className={`notFoundError bg-normal`}>
-            <div class="xclose" onClick={closerErrorModal}>X</div>
+            <div class="xclose" onClick={closerErrorModal}></div>
             <div className='erro-message-img'></div>
             <p>
               Pokemon "{pokemon}" não foi encontrado!
