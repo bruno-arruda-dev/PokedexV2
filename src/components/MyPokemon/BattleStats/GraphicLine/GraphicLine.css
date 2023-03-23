@@ -29,6 +29,7 @@
 .numericalValue {
     width: 10%;
     text-align: right;
+    color: var(--main-text-color)
 }
 
 .lineStat{

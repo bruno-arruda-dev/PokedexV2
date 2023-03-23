@@ -20,11 +20,6 @@
     width: 100px;
 }
 
-.line {
-    width: 80px;
-    border-bottom: 3px solid var(--detail-text-color);
-}
-
 .heightStat-img {
     width: 20px;
     height: 20px;
