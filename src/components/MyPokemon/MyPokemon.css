@@ -106,7 +106,12 @@
         height: 45%;
     }
 
+}
+
+@media (max-height: 750px) {
+
     .myPokemon {
         height: 90%;
     }
+
 }
