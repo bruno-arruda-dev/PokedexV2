@@ -33,3 +33,12 @@
 .brunoAruda--photo:hover {
     transform: scale(1.1);
 }
+
+@media (max-width: 620px) {
+    .brunoArruda {
+        width: 100%;
+        background-color: red;
+        justify-content: space-between;
+        padding: 0 2%;
+    }
+}
