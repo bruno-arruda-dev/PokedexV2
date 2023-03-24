@@ -71,6 +71,12 @@
     max-height: auto;
 }
 
+.myPokemon button,
+.xclose{
+    width: 15px;
+    height: 15px;
+}
+
 .myPokemon button {
     background-color: transparent;
     border: none;
@@ -81,9 +87,22 @@
     z-index: 2000;
 }
 
+.heartType-rHeart,
+.heartType-wHeart {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.heartType-rHeart {
+    background-image: url('../../../public/images/rHeart.png');
+}
+
+.heartType-wHeart {
+    background-image: url('../../../public/images/wHeart.png');
+}
+
 .xclose{
-    width: 15px;
-    height: 15px;
     color: var(--main-text-color);
     position: absolute;
     top: 10px;

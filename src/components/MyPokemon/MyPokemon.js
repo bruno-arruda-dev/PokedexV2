@@ -19,7 +19,7 @@ function MyPokemon() {
   }
 
   useEffect(() => {
-    localStorage.getItem(pokemon) ? setHeart("❤️") : setHeart("💛");
+    localStorage.getItem(pokemon) ? setHeart("rHeart") : setHeart("wHeart");
     if (isOpen === "modalClose") {
       setIsOpen("modalOpen");
     }
@@ -54,7 +54,7 @@ function MyPokemon() {
           :
           !hide && (
             <div className={`myPokemon bg-${mainType}`}>
-              <button onClick={handleClickHeartButton}>{heart}</button>
+              <button onClick={handleClickHeartButton} className={`myPokemonHeart heartType-${heart}`}></button>
               <div class="xclose" onClick={closerModal}></div>
               
               <div className='myPokemon-title-container'>
