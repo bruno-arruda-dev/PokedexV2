@@ -67,7 +67,7 @@ function MyPokemon() {
                 <div className='content-container'>
                   <BattleStats />
                   <NormalStats />
-                  <PokemonTypes mainType={"grass"} secType={"fire"} />
+                  <PokemonTypes mainType={mainType} secType={secType} />
                 </div>
 
                 <div className='image-container'>
