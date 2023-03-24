@@ -2,7 +2,7 @@
     display: flex;
     color: var(--main-text-color);
     font-weight: bold;
-    margin: 1% 0;
+    margin: 10px 0;
     font-size: var(--text-default-size);
 }
 

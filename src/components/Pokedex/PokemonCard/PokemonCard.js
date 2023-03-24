@@ -67,7 +67,8 @@ function PokemonCard({ pokemon }) {
                         <div className='idContainer'>
                             <p className='pokemon-id'>{id.toString().padStart(3, "0")}</p>
                         </div>
-                        <PokemonTypes mainType={mainType} secType={secType} />
+                        <PokemonTypes   mainType={mainType} secType={secType}
+                                        position="absolute" />
                     </div>
                 </>
             )}

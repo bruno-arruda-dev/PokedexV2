@@ -5,6 +5,7 @@ import { GetPokemonDataContext } from '../Context/GetPokemonDataContext';
 import NormalStats from './NormalStats/NormalStats';
 import BattleStats from './BattleStats/BattleStats';
 import { FavoriteContext } from '../Context/FavoriteContext';
+import PokemonTypes from '../Pokedex/PokemonCard/PokemonTypes/PokemonTypes';
 
 function MyPokemon() {
   const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
@@ -62,9 +63,11 @@ function MyPokemon() {
               </div>
 
               <div className='myPokemon-content-container'>
+                
                 <div className='content-container'>
                   <BattleStats />
                   <NormalStats />
+                  <PokemonTypes mainType={"grass"} secType={"fire"} />
                 </div>
 
                 <div className='image-container'>
