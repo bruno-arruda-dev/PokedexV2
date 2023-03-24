@@ -11,13 +11,26 @@
 }
 
 .pokemonCard button {
-    background-color: transparent;
+    width: 15px;
+    height: 15px;
     border: none;
     cursor: pointer;
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 1.7rem;
     right: 0.3rem;
     z-index: 3;
+    background-color: transparent;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.pokemonCard-rHeart {
+    background-image: url('../../../../public/images/rHeart.png');
+}
+
+.pokemonCard-wHeart {
+    background-image: url('../../../../public/images/wHeart.png');
 }
 
 .pokemonCard:hover {

@@ -18,7 +18,7 @@ function PokemonCard({ pokemon }) {
     const [secType, setSecType] = useState("");
     const [id, setId] = useState("");
     const { favorite, favoritesList } = useContext(FavoriteContext);
-    const [heart, setHeart] = useState("💛");
+    const [heart, setHeart] = useState("wHeart");
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
@@ -42,7 +42,7 @@ function PokemonCard({ pokemon }) {
     }
 
     useEffect(() => {
-        localStorage.getItem(pokemon) ? setHeart("❤️") : setHeart("💛");
+        localStorage.getItem(pokemon) ? setHeart("rHeart") : setHeart("wHeart");
     }, [name, favoritesList]);
 
     const handleCardClick = () => {
@@ -61,7 +61,7 @@ function PokemonCard({ pokemon }) {
                     <img className={mainImg ? "pokemonCard-img" : (secImg ? "pokemonCard-img" : "not-Found-Img-PokemonCard")} //Aplica a classe adequada para quando nem a imagem principal, nem a secundárias são encontradas
                         src={mainImg ? mainImg : (secImg ? secImg : logo)} //Verifica se a imagem principal ou a secundária foram encontradas. Se não aplica-se a LOGO padrão da API
                         alt={pokemon} />
-                    <button onClick={handleClickHeartButton}>{heart}</button>
+                    <button onClick={handleClickHeartButton} className={`pokemonCard-${heart}`}></button>
                     <div className={`pokemonCard-container bg-${mainType}`}>
                         <h3 className='pokemon-title'>{name}</h3>
                         <div className='idContainer'>
