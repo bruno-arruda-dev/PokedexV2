@@ -55,12 +55,14 @@ function MyPokemon() {
             <div className={`myPokemon bg-${mainType}`}>
               <button onClick={handleClickHeartButton}>{heart}</button>
               <div class="xclose" onClick={closerModal}></div>
+              
               <div className='myPokemon-title-container'>
                 <h2 className="myPokemon-title">{pokemon}</h2>
+                <p className='myPokemon-id'>{id.toString().padStart(3, "0")}</p>
               </div>
+
               <div className='myPokemon-content-container'>
                 <div className='content-container'>
-                  <p className='myPokemon-id'>{id.toString().padStart(5, "0")}</p>
                   <BattleStats />
                   <NormalStats />
                 </div>
