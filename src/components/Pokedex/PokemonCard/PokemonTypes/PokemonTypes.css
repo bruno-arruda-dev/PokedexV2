@@ -1,0 +1,27 @@
+.pokemonCard-types {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 2;
+    position: absolute;
+    bottom: 28px;
+    left: 5px;
+}
+
+.type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.st {
+    margin-right: 7px;
+}

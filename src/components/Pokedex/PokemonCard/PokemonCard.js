@@ -6,6 +6,7 @@ import { getPokemonData } from '../../API/GetPokemonsAPI';
 import { GetPokemonDataContext } from '../../Context/GetPokemonDataContext';
 import { FavoriteContext } from '../../Context/FavoriteContext';
 import PokeballRoll from '../../PokeballRoll/PokeballRoll';
+import PokemonTypes from './PokemonTypes/PokemonTypes';
 
 function PokemonCard({ pokemon }) {
     const logo = "https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png";
@@ -66,10 +67,7 @@ function PokemonCard({ pokemon }) {
                         <div className='idContainer'>
                             <p className='pokemon-id'>{id.toString().padStart(3, "0")}</p>
                         </div>
-                        <div className='pokemonCard-types'>
-                            <div className={`type st ${mainType}`} st>{mainType}</div>
-                            {secType && <div className={`type nd ${secType}`}>{secType}</div>}
-                        </div>
+                        <PokemonTypes mainType={mainType} secType={secType} />
                     </div>
                 </>
             )}
